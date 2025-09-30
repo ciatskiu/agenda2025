@@ -17,9 +17,9 @@ export class DetalharPage implements OnInit {
   contato!: Contato
   nome!: string;
   telefone!: string;
-  dataNascimento!: string;
   genero!: string;
   maxDate!: string;
+  email!: string;
   editar: boolean = true;
 
   constructor(private router: Router,
@@ -33,18 +33,17 @@ export class DetalharPage implements OnInit {
       this.nome = this.contato.nome;
       this.telefone = this.contato.telefone;
       this.genero = this.contato.genero;
-      this.dataNascimento = this.contato.dataNascimento;
+      this.email = this.contato.email;
     }
   }
 
   salvar(){
-    this.dataNascimento = this.dataNascimento.split('T')[0];
      if(!this.validar(this.nome) || !this.validar(this.telefone)){
       this.presentAlert("Erro ao Cadastrar", "Campos Obrigatórios")
       return;
     }
     if(this.contatoService.update(this.contato, this.nome, this.telefone,
-      this.genero, this.dataNascimento)){
+      this.genero, this.email)){
         this.presentAlert('Atualizar', 'Contato atualizado com sucesso')
         this.router.navigate(['/home'])
       }else{

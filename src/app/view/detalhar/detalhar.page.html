@@ -30,17 +30,8 @@
         <ion-select-option value="Masculino">Masculino</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item lines="none">
-      <ion-label>Data de Nascimento</ion-label>
-      <ion-datetime-button datetime="datetime" disabled="{{editar}}"></ion-datetime-button>
-      <ion-modal [keepContentsMounted]="true">
-        <ng-template>
-          <ion-datetime id="datetime" [(ngModel)]="dataNascimento"
-          display-format="DD/MM/YYYY" [mode]="'date'"
-          placeholder="Selecione a data de Nascimento"
-          [max]="maxDate"></ion-datetime>
-        </ng-template>
-      </ion-modal>
+    <ion-item lines="email">
+      <ion-input placeholder="Email" [(ngModel)]="email" type="email" disabled="{{editar}}"></ion-input>
     </ion-item>
     <ion-button expand="block" (click)="excluir()" color="danger"
     disabled="{{editar}}">Excluir</ion-button>

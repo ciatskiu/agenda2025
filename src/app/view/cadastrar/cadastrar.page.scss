@@ -84,3 +84,16 @@ ion-button {
     transform: scale(0.98); /* Pequeno encolhimento ao tocar */
   }
 }
+
+.validation-error-message {
+  /* Alinha a mensagem horizontalmente com o padding dos inputs */
+  padding: 5px 25px 5px 25px;
+  display: block; /* Ocupa a largura total */
+  font-size: 0.9em; /* Tamanho discreto */
+  font-weight: 500;
+  color: var(--ion-color-danger, #eb445a); /* Cor de erro padrão */
+
+  /* Ajuste vertical para ficar perto do input e dar espaço para o próximo item */
+  margin-top: -8px;
+  margin-bottom: 10px;
+}

@@ -2,7 +2,7 @@ export class Contato {
   private _id: number;
   private _nome: string;
   private _telefone: string;
-  private _dataNascimento!: string;
+  private _email!: string;
   private _genero!: string;
 
   constructor(nome: string, telefone: string) {
@@ -27,11 +27,11 @@ export class Contato {
   public set telefone(value: string) {
     this._telefone = value;
   }
-  public get dataNascimento(): string {
-    return this._dataNascimento;
+  public get email(): string {
+    return this._email;
   }
-  public set dataNascimento(value: string) {
-    this._dataNascimento = value;
+  public set email(value: string) {
+    this._email = value;
   }
   public get genero(): string {
     return this._genero;

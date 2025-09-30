@@ -10,7 +10,6 @@ export class ContatoService {
   constructor() {
     let contato: Contato = new Contato("teste", "123");
     contato.genero = "Masculino"
-    contato.dataNascimento = "2022-08-10"
     this.create(contato)
    }
 
@@ -24,13 +23,13 @@ export class ContatoService {
   }
 
   public update(contato: Contato, nome: string, telefone: string,
-    genero: string, dataNascimento: string): boolean{
+    genero: string, email: string): boolean{
       for(let i = 0; i  < this.contatos.length; i++){
         if(contato.id == this.contatos[i].id){
           this._contatos[i].nome = nome;
           this._contatos[i].telefone = telefone;
           this._contatos[i].genero = genero;
-          this._contatos[i].dataNascimento = dataNascimento;
+          this._contatos[i].email = email;
           return true;
         }
       }
