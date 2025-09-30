@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" style="color: white"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhar</ion-title> </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-item class="toggle-card">
+    <ion-label>Habilitar Edição</ion-label>
+    <ion-toggle color="success" (ionChange)="alterarEdicao()"></ion-toggle>
+  </ion-item>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-input placeholder="Nome" [(ngModel)]="nome" disabled="{{editar}}"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input
+        placeholder="Telefone"
+        type="number"
+        [(ngModel)]="telefone"
+        disabled="{{editar}}"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-select placeholder="Gênero" [(ngModel)]="genero" disabled="{{editar}}">
+        <ion-select-option value="Não Declarar">Não Declarar</ion-select-option>
+        <ion-select-option value="Feminino">Feminino</ion-select-option>
+        <ion-select-option value="Masculino">Masculino</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Data de Nascimento</ion-label>
+      <ion-datetime-button datetime="datetime" disabled="{{editar}}"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime" [(ngModel)]="dataNascimento"
+          display-format="DD/MM/YYYY" [mode]="'date'"
+          placeholder="Selecione a data de Nascimento"
+          [max]="maxDate"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <ion-button expand="block" (click)="excluir()" color="danger"
+    disabled="{{editar}}">Excluir</ion-button>
+    <ion-button expand="block" (click)="salvar()"
+    disabled="{{editar}}">Salvar</ion-button>
+  </ion-list>
+</ion-content>
