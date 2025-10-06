@@ -16,8 +16,6 @@ import { Contato } from 'src/app/model/contato';
 export class CadastrarPage implements OnInit {
   formCadastrar!: FormGroup;
   isSubmitted = false;
-  maxDate: string;
-
 
   constructor(private alertController: AlertController,
     private router: Router,
@@ -29,8 +27,6 @@ export class CadastrarPage implements OnInit {
         genero: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],
       });
-      let hoje = new Date();
-      this.maxDate = hoje.toISOString().split('T')[0];
     }
 
   ngOnInit() {

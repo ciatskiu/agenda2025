@@ -15,7 +15,7 @@
     <form [formGroup]="formCadastrar" (ngSubmit)="submitForm()" novalidate>
 
       <ion-item lines="none">
-        <ion-input placeholder="Nome" formControlName="nome"></ion-input>
+        <ion-input placeholder="Nome" formControlName="nome" ></ion-input>
       </ion-item>
 
       @if (formCadastrar.get('nome')?.touched || formCadastrar.get('nome')?.dirty) {
